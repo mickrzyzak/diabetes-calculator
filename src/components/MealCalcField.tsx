@@ -9,7 +9,7 @@ function Field({ id, label }: { id: string; label: string }) {
       type="numer"
       autoComplete="off"
       required
-      inputProps={{ min: 0, max: 100000 }}
+      inputProps={{ min: 0, max: 1000 }}
       sx={{ flex: 1 }}
     />
   );

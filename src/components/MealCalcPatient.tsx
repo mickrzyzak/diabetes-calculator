@@ -1,19 +1,17 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Field from "./MealCalcField";
 
-function MealCalcProduct({ sx }: { sx?: object }) {
+function MealCalcPatient({ sx }: { sx?: object }) {
   return (
     <Box sx={sx}>
       <Typography variant="h5" sx={{ mb: 2 }}>
-        Product (per 100 grams)
+        Patient
       </Typography>
       <Stack direction={{ xs: "column", sm: "row" }} spacing={{ xs: 2, sm: 4 }}>
-        <Field id="product-carbohydrates" label="Carbohydrates" />
-        <Field id="product-proteins" label="Proteins" />
-        <Field id="product-fat" label="Fat" />
+        <Field id="patient-dose-per-unit" label="Dose per unit" />
       </Stack>
     </Box>
   );
 }
 
-export default MealCalcProduct;
+export default MealCalcPatient;
