@@ -1,16 +1,42 @@
+import { useState } from "react";
 import { TextField } from "@mui/material";
+import { MealCalcReducerType } from "../reducers/mealCalcReducer";
 
-function Field({ id, label }: { id: string; label: string }) {
+type FieldType = {
+  id: string;
+  label: string;
+  action: string;
+  value: string;
+  dispatch: React.Dispatch<MealCalcReducerType>;
+};
+
+function Field({ id, label, action, value, dispatch }: FieldType) {
+  const [error, setError] = useState(true);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    setError(isNaN(parseFloat(value)));
+
+    dispatch({
+      type: action,
+      payload: value,
+    });
+  };
+
   return (
     <TextField
       id={id}
       label={label}
       variant="standard"
-      type="numer"
+      type="text"
       autoComplete="off"
       required
-      inputProps={{ min: 0, max: 1000 }}
+      inputProps={{ minLength: 0, maxLength: 10 }}
       sx={{ flex: 1 }}
+      value={value}
+      error={error}
+      onChange={handleChange}
     />
   );
 }
