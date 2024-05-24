@@ -1,9 +1,14 @@
+import { MealCalcContextStateType } from "../contexts/MealCalcContext";
+
 export type MealCalcReducerType = {
   type: string;
-  payload?: string;
+  payload: string;
 };
 
-function MealCalcReducer(state: object, action: MealCalcReducerType) {
+function MealCalcReducer(
+  state: MealCalcContextStateType,
+  action: MealCalcReducerType
+): MealCalcContextStateType {
   switch (action.type) {
     case "setCarbohydrates":
       return { ...state, carbohydrates: action.payload };

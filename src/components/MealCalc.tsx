@@ -12,14 +12,14 @@ function MealCalc() {
   const [state, dispatch] = useReducer(mealCalcReducer, initialState);
 
   return (
-    <MealCalcContext.Provider value={{ state: { ...state }, dispatch }}>
+    <MealCalcContext.Provider value={{ state, dispatch }}>
       <Box>
         <Typography variant="h4" sx={{ mb: 2 }}>
           Meal to CE and PFE
         </Typography>
         <Product sx={{ mb: 4 }} />
-        <Patient sx={{ mb: 4 }} />
-        <Meal sx={{ mb: 5 }} />
+        <Meal sx={{ mb: 4 }} />
+        <Patient sx={{ mb: 5 }} />
         <Typography variant="h5" sx={{ mb: 2 }}>
           Bolus
         </Typography>
