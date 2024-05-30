@@ -32,7 +32,12 @@ function Field({ id, label, action, value, dispatch }: FieldType) {
       type="text"
       autoComplete="off"
       required
-      inputProps={{ minLength: 0, maxLength: 10, inputMode: "numeric" }}
+      inputProps={{
+        minLength: 0,
+        maxLength: 10,
+        inputMode: "numeric",
+        "data-testid": id,
+      }}
       sx={{ flex: 1 }}
       value={value}
       error={error}
