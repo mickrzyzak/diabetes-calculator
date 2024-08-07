@@ -35,7 +35,7 @@ function Field({ id, label, action, value, dispatch }: FieldType) {
       inputProps={{
         minLength: 0,
         maxLength: 10,
-        inputMode: "numeric",
+        inputMode: "decimal",
         "data-testid": id,
       }}
       sx={{ flex: 1 }}
